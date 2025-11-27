@@ -16,6 +16,7 @@ int main() {
   printf("Strlen(s2): %i\n", (int)strlen(s2)); //prints 33
 
   //count frequency of each letter in s1
+  //You call strlen(s1) and strlen(s2) in every loop condition, which recalculates the string length each time. Store the length in a variable before the loop to improve efficiency.
   for(int i = 0; i < strlen(s1); i++){
     switch(s1[i]){
       case 'a': counter1[0]++;
@@ -54,7 +55,8 @@ int main() {
 
   for(int i = 0; i < sizeof(counter1)/sizeof(int); i++){
     if(counter1[i] != counter2[i]){
-      flag == 1;
+      flag = 1;
+      break;
     }
   }
 
